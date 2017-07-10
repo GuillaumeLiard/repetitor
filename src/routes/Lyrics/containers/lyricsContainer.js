@@ -5,9 +5,15 @@ const mapDispatchToProps = {
 
 }
 
-// const mapStateToProps = {
-//
-// }
-const mapStateToProps = null
+const mapStateToProps = (state) => ({
+    count: 5,
+    items: [
+        'a',
+        'd',
+        'g'
+    ]
+})
+
+// const mapStateToProps = null
 
 export default connect(mapStateToProps, mapDispatchToProps)(lyricsComponent)
