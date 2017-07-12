@@ -5,15 +5,11 @@ import lyricsComponent from '../components/lyricsComponent'
 
 const mapDispatchToProps = {
     selection
+    // selection : id => selection(id)
 }
 
 const mapStateToProps = (state) => ({
-    count: 5,
-    items: [
-        'a',
-        'd',
-        'g'
-    ]
+    items: state.lyrics
 })
 
 // const mapStateToProps = null

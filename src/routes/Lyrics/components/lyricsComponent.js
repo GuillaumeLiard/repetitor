@@ -6,7 +6,7 @@ export const LyricsComponent = ({items, selection}) => (
         abc
         <ul className="phrases">
             {items.map((item, index) =>
-                <li className="phrase" key={index.toString()} onClick={selection}> {item} </li>
+                <li className={item.active ? "phrase phrase_active" : "phrase"} key={item.id} onClick={() => selection(item.id)}> {item.text} </li>
             )}
         </ul>
 
