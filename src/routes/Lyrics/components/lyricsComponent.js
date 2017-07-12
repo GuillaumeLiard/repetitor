@@ -1,30 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-// let items = [
-//     'a',
-//     'd',
-//     'g'
-// ]
-
-export const LyricsComponent = ({items}) => (
+export const LyricsComponent = ({items, selection}) => (
     <div>
         abc
-        <h1>
+        <ul className="phrases">
             {items.map((item, index) =>
-                <li key={index.toString()}> {item} </li>
+                <li className="phrase" key={index.toString()} onClick={selection}> {item} </li>
             )}
-        </h1>
+        </ul>
 
     </div>
 
 )
 
+LyricsComponent.propTypes = {
+    items: PropTypes.array,
+    selection: PropTypes.func,
+}
 export default LyricsComponent
-// <ul>
-//     {
-//         items.map(item => {
-//             return <li> {item} </li>
-//         })
-//     }
-// </ul>

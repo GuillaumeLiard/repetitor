@@ -6,10 +6,10 @@ export function selection (value = 1) {
         payload: value
     }
 }
-
-export const actions = {
-    selection
-}
+// 
+// export const actions = {
+//     selection
+// }
 
 const ACTION_HANDLERS = {
     [LYRIC_SELECT]: (state, action) => state + action.payload

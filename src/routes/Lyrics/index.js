@@ -5,7 +5,7 @@ export default (store) => ({
     getComponent( nextState, cb) {
         require.ensure([], (require) => {
             const container = require('./containers/lyricsContainer').default
-            const reducer = require('./reducers/lyricsReducer').default
+            const reducer = require('./modules/lyrics').default
             injectReducer(store, {
                 key: 'lyrics',
                 reducer

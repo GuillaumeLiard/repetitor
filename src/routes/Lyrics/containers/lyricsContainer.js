@@ -1,8 +1,10 @@
 import {connect} from 'react-redux'
+import {selection} from '../modules/lyrics'
 import lyricsComponent from '../components/lyricsComponent'
 
-const mapDispatchToProps = {
 
+const mapDispatchToProps = {
+    selection
 }
 
 const mapStateToProps = (state) => ({
