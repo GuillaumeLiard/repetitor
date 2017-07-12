@@ -2,11 +2,21 @@ export const SELECTION_SET = 'SELECTION_SET'
 export const SELECTION_ADD = 'SELECTION_ADD'
 export const SELECTION_ADD_BETWEEN = 'SELECTION_ADD_BETWEEN'
 
-export function selectionMade (index) {
-    return {
-        type: SELECTION_SET,
-        payload: index
+export function selectionMade (index, e) {
+    let out;
+    if(e.ctrlKey){
+        out = {
+            type: SELECTION_ADD,
+            payload: index
+        }
+    }else {
+        out = {
+            type: SELECTION_SET,
+            payload: index
+        }
     }
+    return out;
+
 }
 
 const ACTION_HANDLERS = {
