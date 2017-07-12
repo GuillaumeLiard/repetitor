@@ -16,6 +16,7 @@ export const LyricsComponent = ({items, selectedItems, selectionMade}) => (
 
 LyricsComponent.propTypes = {
     items: PropTypes.array,
+    selectedItems: PropTypes.array,
     selection: PropTypes.func,
 }
 export default LyricsComponent

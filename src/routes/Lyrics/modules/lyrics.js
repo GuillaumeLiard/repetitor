@@ -15,11 +15,10 @@ const ACTION_HANDLERS = {
     },
     [SELECTION_ADD]: (state, action) => {
         return state.includes(action.payload) ? [...state] : [...state, action.payload]
-    }    
+    }
 }
 
 const initialState = []
-
 
 export default function lyricsReducer (state = initialState, action) {
     const handler = ACTION_HANDLERS[action.type]
