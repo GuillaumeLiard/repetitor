@@ -1,49 +1,24 @@
-export const LYRIC_SELECT = 'LYRIC_SELECT'
+export const SELECTION_SET = 'SELECTION_SET'
+export const SELECTION_ADD = 'SELECTION_ADD'
+export const SELECTION_ADD_BETWEEN = 'SELECTION_ADD_BETWEEN'
 
-export function selection (id) {
+export function selectionMade (index) {
     return {
-        type: LYRIC_SELECT,
-        payload: id
+        type: SELECTION_SET,
+        payload: index
     }
 }
-//
-// export const actions = {
-//     selection
-// }
 
 const ACTION_HANDLERS = {
-    // [LYRIC_SELECT]: (state, action) => state + action.payload
-    [LYRIC_SELECT]: (state, action) => {
-        let o = state.findIndex(e => e.id === action.payload)
-        let newState = [...state]
-        newState[o].active = newState[o].active ? false : true;
-        return newState
-    }
+    [SELECTION_SET]: (state, action) => {
+        return [action.payload]
+    },
+    [SELECTION_ADD]: (state, action) => {
+        return state.includes(action.payload) ? [...state] : [...state, action.payload]
+    }    
 }
 
-const initialState = [
-    {
-        "id":1,
-        "text":"You can try and read my lyrics off of this paper before I lay 'em",
-        "start":23,
-        "end":26,
-        "active":false
-    },
-    {
-        "id":2,
-        "text":"But you won't take the sting out these words before I say 'em",
-        "start":26.5,
-        "end":29,
-        "active":false
-    },
-    {
-        "id":3,
-        "text":"Cause ain't no way I'ma let you stop me from causing mayhem",
-        "start":29,
-        "end":31.7,
-        "active":false
-    }
-]
+const initialState = []
 
 
 export default function lyricsReducer (state = initialState, action) {
