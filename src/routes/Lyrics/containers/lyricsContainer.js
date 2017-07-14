@@ -1,6 +1,7 @@
 import {connect} from 'react-redux'
 import {selectionMade} from '../modules/lyrics'
 import lyricsComponent from '../components/lyricsComponent'
+import group from '../components/group'
 
 import nota from '../data/notafraid.json'
 const items = nota.phrases
@@ -42,4 +43,4 @@ function calculateLoopEnd(state){
     return state.length ? Math.max(...state.map(i => items[i].end)) : 0
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(lyricsComponent)
+export default connect(mapStateToProps, mapDispatchToProps)(group)
