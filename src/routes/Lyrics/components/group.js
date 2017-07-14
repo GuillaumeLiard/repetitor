@@ -8,7 +8,7 @@ class Group extends React.Component {
     return (
         <div>
             <div>
-                <VideoPlayer title="Not afraid - Eminem" loopStart={this.props.loopStart} loopEnd={this.props.loopEnd}/>
+                <VideoPlayer title="Not afraid - Eminem" videoConfig={this.props.videoConfig} loopStart={this.props.loopStart} loopEnd={this.props.loopEnd}/>
             </div>
             <div>
                 <Lyrics items={this.props.items} selectedItems={this.props.selectedItems} selectionMade={this.props.selectionMade}/>
