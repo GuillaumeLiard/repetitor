@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import videojs from 'video.js'
+require('!style-loader!css-loader!video.js/dist/video-js.min.css')
 
 class VideoPlayer extends React.Component {
     componentDidMount() {
@@ -28,7 +29,7 @@ class VideoPlayer extends React.Component {
                     loop : [{this.props.loopStart}, {this.props.loopEnd}]
                 </h2>
                 <div data-vjs-player>
-                    <video ref={ node => this.videoNode = node } className="video-js"></video>
+                    <video ref={ node => this.videoNode = node } className="video-js vjs-default-skin"></video>
             </div>
         </div>
     )

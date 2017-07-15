@@ -26,7 +26,8 @@ const items = nota.phrases
 
 const videoConfig = {
     sources: [{"src": "http://vjs.zencdn.net/v/oceans.mp4"}],
-    autoplay: "true"
+    autoplay: "true",
+    controls:true
     // techOrder: ["youtube"],
     // sources: [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=j5-yKhDd64s"}],
     // plugins: {
