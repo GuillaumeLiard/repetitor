@@ -28,8 +28,8 @@ const videoConfig = {
     sources: [{"src": "http://vjs.zencdn.net/v/oceans.mp4"}],
     autoplay: "true",
     controls:true,
-    // techOrder: ["youtube"],
-    // sources: [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=j5-yKhDd64s"}],
+    techOrder: ["youtube"],
+    sources: [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=j5-yKhDd64s"}],
     // plugins: {
     //     abLoopPlugin: {
     //         // start:22    	//in seconds - defaults to 0

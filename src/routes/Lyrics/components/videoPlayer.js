@@ -2,16 +2,22 @@ import React from 'react'
 import PropTypes from 'prop-types'
 // require('expose?videojs!./video.js')
 // require("expose?XModule!./file.js")
-import videojs from 'video.js'
+// require('videojs-youtube')
+// require('imports-loader?define=>false!videojs-youtube')
 // require('videojs-abloop')
 // import abLoopPlugin from 'videojs-abloop'
 require('!style-loader!css-loader!video.js/dist/video-js.min.css')
+
+import videojs from 'video.js'
+import vjsy from 'videojs-youtube'
 
 let inter;
 
 class VideoPlayer extends React.Component {
     componentDidMount() {
-        // instantiate video.js
+        console.log(videojs)
+        console.log(vjsy)
+        // instantiate video.jsid
         this.player = videojs(this.videoNode, this.props.videoConfig, () => {
             // this.player.currentTime(5);
             // setInterval(()=>{
@@ -31,7 +37,7 @@ class VideoPlayer extends React.Component {
       this.player.currentTime(nextProps.loopStart);
       let delta = 1000 * (nextProps.loopEnd - nextProps.loopStart)
       clearInterval(inter)
-      inter =  setInterval(()=>{
+      inter = setInterval(()=>{
           this.player.currentTime(nextProps.loopStart);
       },delta)
 
