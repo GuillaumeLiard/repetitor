@@ -21,14 +21,16 @@ export function selectionMade (index, e) {
 
 const ACTION_HANDLERS = {
     [SELECTION_SET]: (state, action) => {
-        return [action.payload]
+        return {...state, phrases:[action.payload]}
     },
     [SELECTION_ADD]: (state, action) => {
-        return state.includes(action.payload) ? [...state] : [...state, action.payload]
+        return {...state, phrases:state.phrases.includes(action.payload) ? [...state.phrases] : [...state.phrases, action.payload]}
     }
 }
 
-const initialState = []
+const initialState = {
+    phrases:[]
+}
 
 export default function lyricsReducer (state = initialState, action) {
     const handler = ACTION_HANDLERS[action.type]

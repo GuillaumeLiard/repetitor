@@ -10,6 +10,12 @@ export default (store) => ({
                 key: 'lyrics',
                 reducer
             })
+            // const speedContainer = require('./containers/speedContainer').default
+            // const reducer = require('./modules/lyrics').default
+            // injectReducer(store, {
+            //     key: 'lyrics',
+            //     reducer
+            // })
             cb(null, container)
         }, 'lyrics')
     }

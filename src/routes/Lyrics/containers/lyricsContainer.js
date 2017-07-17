@@ -49,11 +49,11 @@ const mapDispatchToProps = {
 }
 
 const mapStateToProps = (state) => ({
-    selectedItems: state.lyrics,
+    selectedItems: state.lyrics.phrases,
     items: items,
     videoConfig: videoConfig,
-    loopStart: calculateLoopStart(state.lyrics),
-    loopEnd: calculateLoopEnd(state.lyrics)
+    loopStart: calculateLoopStart(state.lyrics.phrases),
+    loopEnd: calculateLoopEnd(state.lyrics.phrases),
 })
 
 function calculateLoopStart(state){
