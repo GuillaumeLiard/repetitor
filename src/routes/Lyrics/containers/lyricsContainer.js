@@ -1,5 +1,5 @@
 import {connect} from 'react-redux'
-import {selectionMade} from '../modules/lyrics'
+import {selectionMade, onPlusClicked, onMinusClicked} from '../modules/lyrics'
 import lyricsComponent from '../components/lyricsComponent'
 import group from '../components/group'
 
@@ -45,7 +45,9 @@ const videoConfig = {
 }
 
 const mapDispatchToProps = {
-    selectionMade
+    selectionMade,
+    onPlusClicked,
+    onMinusClicked
 }
 
 const mapStateToProps = (state) => ({
@@ -54,6 +56,7 @@ const mapStateToProps = (state) => ({
     videoConfig: videoConfig,
     loopStart: calculateLoopStart(state.lyrics.phrases),
     loopEnd: calculateLoopEnd(state.lyrics.phrases),
+    speed: state.lyrics.speed
 })
 
 function calculateLoopStart(state){

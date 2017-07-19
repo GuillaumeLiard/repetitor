@@ -8,10 +8,12 @@ import ReactPlayer from 'react-player'
 class VideoPlayer extends Component {
     componentWillReceiveProps(nextProps) {
         console.log(this.player)
+        console.log(this.player)
+        // this.player.props.playbackRate = 2
         let duration = this.player.getDuration();
         if (duration){
             this.player.seekTo(nextProps.loopStart / this.player.getDuration());
-            let delta = 1000 * (nextProps.loopEnd - nextProps.loopStart)
+            let delta = 1000 * (nextProps.loopEnd - nextProps.loopStart) / nextProps.speed
             clearInterval(inter)
             inter = setInterval(()=>{
               this.player.seekTo(nextProps.loopStart / this.player.getDuration());
@@ -21,8 +23,9 @@ class VideoPlayer extends Component {
         }
   render () {
     return <ReactPlayer url='https://www.youtube.com/watch?v=j5-yKhDd64s'
-        playing
+        // playing
         controls
+        playbackRate ={this.props.speed}
         ref={player => { this.player = player }}
          />
   }

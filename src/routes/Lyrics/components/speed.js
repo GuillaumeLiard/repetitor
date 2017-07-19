@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export const Speed = ({speed}) => (
-    <div>
+export const Speed = ({speed, onPlusClicked, onMinusClicked}) => (
+    <div id="speed">
         <h2>speed : {speed}</h2>
         <div className="buttons">
-            <button className="button">+</button>
-            <button className="button">-</button>
+            <button onClick={onPlusClicked} className="button">+</button>
+            <button onClick={onMinusClicked} className="button">-</button>
         </div>
 
     </div>
